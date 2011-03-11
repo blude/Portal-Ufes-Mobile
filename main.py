@@ -8,23 +8,27 @@ from google.appengine.ext.webapp import RequestHandler, WSGIApplication
 sys.path.insert(0, join_path(dirname(__file__), 'lib')) # extend sys.path
 import feedparser
 
-class Show(RequestHandler):
+class Single(RequestHandler):
 
     def get(self):
     
         d = feedparser.parse('http://portal.ufes.br/rss.xml')
-        
+    
         feed = d.feed
-        entry = d.entries[2]
+        entries = d.entries
+        entry = entries[2]
+        
+        id = self.request.get('id')
     
         template_values = {
             'feed': feed,
-            'entry': entry
+            'entries': entries,
+            'entry': entry,
+            'id': id,
         }
-    
+        
         path = join_path(dirname(__file__), 'templates/article.html')
         self.response.out.write(template.render(path, template_values))
-
 
 class News(RequestHandler):
 
@@ -83,7 +87,7 @@ def main():
                                     ('/sobre/', About),
                                     ('/changelog/', Changelog),
                                     ('/noticias/', News),
-                                    ('/noticia/', Show)]
+                                    ('/noticia/', Single)]
                                     ,debug=True)
     CGIHandler().run(application)
 
