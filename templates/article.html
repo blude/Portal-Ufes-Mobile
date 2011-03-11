@@ -1,0 +1,18 @@
+﻿{% extends 'base.html' %}
+{% block page-id %}article{% endblock %}
+{% block title %}{{ entry.title }} - {% endblock %}
+{% block page-theme %}d{% endblock %}
+{% block header %}
+<div data-role="header" data-theme="b">
+	<a href="/noticias/" data-icon="arrow-l" data-rel="back">Voltar</a>
+	<h1>Últimas notícias</h1>
+</div>
+{% endblock %}
+{% block content %}
+<div data-role="content">
+	<h2>{{ entry.title }}</h2>
+	{{ entry.description }}
+	<p><a href="mailto:sppratti@gmail.com" data-role="button" data-theme="c">Enviar notícia por email</a></p>
+</div>
+{% endblock %}
+{% block footer %}{% endblock %}

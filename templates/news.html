@@ -1,0 +1,23 @@
+﻿{% extends 'base.html' %}
+{% block page-id %}news{% endblock %}
+{% block title %}Últimas Notícias - {% endblock %}
+{% block page-theme %}c{% endblock %}
+{% block header %}
+<div data-role="header" data-theme="b">
+	<a href="/" data-icon="arrow-l" data-rel="back" data-direction="reverse">Voltar</a>
+	<h1>Últimas notícias</h1>
+</div>
+{% endblock %}
+{% block content %}
+<div data-role="content">
+	<ul data-role="listview" data-theme="d" data-dividertheme="d">
+		<li data-role="list-divider">{{ entries|length }} notícia{{ entries|length|pluralize }}</li>
+	{% for entry in entries %}
+		<li><a href="/noticia/">{{ entry.title }}</a>
+	{% endfor %}
+		<li>&nbsp;</li>
+		<li data-theme="c"><a href="http://www.twitter.com/ufesonline" target="_blank">Veja mais notícias no Twitter</a></li>
+	</ul>
+</div>
+{% endblock %}
+{% block footer %}{% endblock %}

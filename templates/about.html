@@ -1,0 +1,24 @@
+﻿{% extends 'base.html' %}
+{% block title %}Sobre - {% endblock %}
+{% block page-theme %}d{% endblock %}
+{% block header %}
+<div data-role="header" data-theme="b" data-position="inline">
+	<a href="/" data-icon="arrow-l" data-rel="back" data-direction="reverse">Voltar</a>
+	<h1>Sobre</h1>
+</div>
+{% endblock %}
+{% block content %}
+<div data-role="content">
+	<div id="aboutheader"> 
+		<h1 id="logo"><img src="/media/img/ufes-brasao.png" alt="Universidade Federal do Espírito Santo" width="280" height="77" /></h1> 
+	</div> 
+	<ul data-role="listview" data-inset="true" data-theme="c">
+		<li><a href="/changelog/"><h3>Ufes Mobile</h3><p>2.0 beta</p></a></li>
+		<li><a href="http://www.twitter.com/blude/" target="_blank"><h3>Criado por</h3><p>Saulo Pratti (twitter.com/blude)</p></a></li>
+		<li>❤ Vitória, 2011</li>
+	</ul>
+	<input type="image" src="ttp://i.creativecommons.org/l/by/3.0/88x31.png" alt="Licença Creative Commons" value="Creative Commons Attribution" data-icon="info">
+	<p><a href="mailto:sppratti@gmail.com?subject=Mobile Ufes" data-role="button" data-theme="c">Enviar feedback</a></p>
+</div>
+{% endblock %}
+{% block footer %}{% endblock %}
