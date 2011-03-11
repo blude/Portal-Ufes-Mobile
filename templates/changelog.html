@@ -1,0 +1,32 @@
+﻿{% extends 'base.html' %}
+{% block title %}Changelog - {% endblock %}
+{% block page-theme %}b{% endblock %}
+{% block header %}
+	<div data-role="header" data-position="inline">
+		<a href="/about/" data-icon="arrow-l" data-rel="back" data-direction="reverse">Voltar</a>
+		<h2>Changelog</h2>
+	</div>
+{% endblock %}
+{% block content %}
+	<div data-role="content">
+	
+		<div id="changes">
+			<h4>2.1</h4>
+			<ul>
+				<li>corrigido listas com tema "d"</li>
+			</ul>
+			<h4>2.0</h4>
+			<ul>
+				<li>nova interface com jQuery Mobile</li>
+				<li>reformulação do código em Python</li>
+				<li>hospedado no Google App Engine</li>
+			</ul>
+			<h4>1.0</h4>
+			<ul>
+				<li>CSS baseado no tema do jQTouch</li>
+				<li>desenvolvido em PHP</li>
+			</ul>
+		</div>
+		
+	</div>
+{% endblock %}

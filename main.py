@@ -8,7 +8,6 @@ from google.appengine.ext.webapp import RequestHandler, WSGIApplication
 sys.path.insert(0, join_path(dirname(__file__), 'lib')) # extend sys.path
 import feedparser
 
-
 class Show(RequestHandler):
 
     def get(self):
@@ -59,15 +58,30 @@ class About(RequestHandler):
 
     def get(self):
     
-        template_values = {}
+        version = "2.1 beta"
+    
+        template_values = {
+            'version': version,
+        }
         
         path = join_path(dirname(__file__), 'templates/about.html')
         self.response.out.write(template.render(path, template_values))
-        
 
+
+class Changelog(RequestHandler):
+
+    def get(self):
+    
+        template_values = {}
+        
+        path = join_path(dirname(__file__), 'templates/changelog.html')
+        self.response.out.write(template.render(path, template_values))
+
+        
 def main():
     application = WSGIApplication([('/', MainHandler),
                                     ('/sobre/', About),
+                                    ('/changelog/', Changelog),
                                     ('/noticias/', News),
                                     ('/noticia/', Show)]
                                     ,debug=True)

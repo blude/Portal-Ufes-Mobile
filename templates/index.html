@@ -1,15 +1,27 @@
-﻿{% extends 'base.html' %}
-{% block page-id %}home{% endblock %}
-{% block content %}
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Mobile Ufes</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a3/jquery.mobile-1.0a3.min.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/master.css" type="text/css">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.5.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0a3/jquery.mobile-1.0a3.min.js"></script>
+</head>
+<body>
+<div data-role="page" data-theme="u" id="home">
 	<div id="homeheader">
 		<h1 id="logo"><img src="/media/img/ufes-logo.png" width="212" height="54" alt="Universidade Federal do Espírito Santo"></h1>
 	</div>
+	
 	<div data-role="content">	
-		<ul data-role="listview" data-inset="true" data-theme="d">
+	
+		<ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="c">
 			<li><a href="/noticias/">Últimas notícias</a></li>
 			<li><a href="/sobre/" data-transition="slideup">Sobre</a></li>
 		</ul>
-		<p id="addressinfo">
+		
+		<div id="addressinfo">
 			<a rel="external" href="http://www.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Ufes&sll=-20.263996,-40.266466&sspn=0.010125,0.021136&ie=UTF8&hq=Ufes&hnear=&ll=-20.278522,-40.30122&spn=0.010124,0.021136&z=16">
 				<span class="fn org">Universidade Federal do Espírito Santo</span><br>
 				<span class="adr">
@@ -17,9 +29,14 @@
 					<span class="postal-code">29075-910</span> <span class="locality">Vitória</span> <span class="region">ES</span></span> 
 				</span>
 			</a>
-		</p>
+		</div>
+		
 		<ul data-role="listview" data-inset="true" data-theme="c">
-			<li><a href="http://portal.ufes.br/" rel="external">Versão normal</a></ul>
+			<li><a href="http://portal.ufes.br/">Versão normal</a></ul>
 		</ul>
+		
 	</div>
-{% endblock %}
+	
+</div>
+</body>
+</html>
