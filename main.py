@@ -2,26 +2,22 @@
 import sys
 from os.path import dirname, join as join_path
 from wsgiref.handlers import CGIHandler
-from google.appengine.api import urlfetch
 from google.appengine.ext.webapp import template
 from google.appengine.ext.webapp import RequestHandler, WSGIApplication
 sys.path.insert(0, join_path(dirname(__file__), 'lib')) # extend sys.path
 import feedparser
 from datetime import datetime
 
+d = feedparser.parse('http://portal.ufes.br/rss.xml') # feed url
+feed = d.feed
+entries = d.entries
+
 class Single(RequestHandler):
 
     def get(self):
     
-        d = feedparser.parse('http://portal.ufes.br/rss.xml')
-    
-        feed = d.feed
-        entries = d.entries
-        
         id = self.request.get('id')
-
         entry = entries[int(id) - 1]
-        
         date = datetime.strptime(entry.date[:-6],'%a, %d %b %Y %H:%M:%S')
         
         template_values = {
@@ -38,11 +34,6 @@ class Single(RequestHandler):
 class News(RequestHandler):
 
     def get(self):
-        
-        d = feedparser.parse('http://portal.ufes.br/rss.xml')
-        
-        feed = d.feed
-        entries = d.entries
         
         template_values = {
             'feed': feed,

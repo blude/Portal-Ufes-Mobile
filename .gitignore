@@ -1,9 +1,4 @@
 *.pyc
-*.*~
 .DS_Store
-README~
-*.tar
-*.tar.gz
-*.zip
-*.7zip
-*.rar
+Thumbs.db
+*.*~
