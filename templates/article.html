@@ -10,8 +10,11 @@
 {% endblock %}
 {% block content %}
 	<div data-role="content">
-		<h2>{{ entry.title }}</h2>
-		{{ entry.description }}
-		<p><a href="mailto:sppratti@gmail.com" data-role="button" data-theme="c">Enviar notícia por email</a></p>
+		<div class="entry">
+			<div class="entry-title"><h2>{{ entry.title }}</h2></div>
+			<p class="entry-meta"><strong>Por</strong> {{ entry.author }} <strong>em</strong> {{ date|date:"d/m/Y" }}</p>
+			<div class="entry-content">{{ entry.description }}</div>
+		</div>
+		<p><a href="mailto:?subject={{ entry.title }}&body={{ entry.description|striptags }}" data-role="button" data-theme="c">Enviar notícia por email</a></p>
 	</div>
 {% endblock %}

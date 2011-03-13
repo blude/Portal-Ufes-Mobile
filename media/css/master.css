@@ -156,8 +156,33 @@
 	top: 0.65em;
 }
 
-h2 {
-	margin-top: 0;
+.ui-header .ui-title {
+	font-size: 20px;
+	margin: .35em 90px .4em;
 }
 
+#changes ul {
+	padding: 0 1em;
+	margin: 0;
+}
 
+#changes li {
+	font-size: 0.9em;
+	padding: 0.1em;
+}
+
+#changes h4 {
+	margin: 1.33em 0 0.1em;
+}
+
+.entry-meta {
+	color: #999;
+	margin-top: -10px;
+	font-size: 0.7em;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+.entry-content {
+	line-height: 1.5em;
+	font-family: Georgia, "Times New", "Times New Roman", serif;
+}

@@ -7,6 +7,7 @@ from google.appengine.ext.webapp import template
 from google.appengine.ext.webapp import RequestHandler, WSGIApplication
 sys.path.insert(0, join_path(dirname(__file__), 'lib')) # extend sys.path
 import feedparser
+from datetime import datetime
 
 class Single(RequestHandler):
 
@@ -16,15 +17,19 @@ class Single(RequestHandler):
     
         feed = d.feed
         entries = d.entries
-        entry = entries[2]
         
         id = self.request.get('id')
-    
+
+        entry = entries[int(id) - 1]
+        
+        date = datetime.strptime(entry.date[:-6],'%a, %d %b %Y %H:%M:%S')
+        
         template_values = {
             'feed': feed,
             'entries': entries,
             'entry': entry,
             'id': id,
+            'date': date,
         }
         
         path = join_path(dirname(__file__), 'templates/article.html')
