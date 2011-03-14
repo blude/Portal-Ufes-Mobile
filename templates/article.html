@@ -5,16 +5,28 @@
 {% block header %}
 	<div data-role="header" data-theme="b">
 		<a href="/noticias/" data-icon="arrow-l" data-rel="back">Voltar</a>
-		<h1>&nbsp;</h1>
+		<h1>Últimas notícias</h1>
 	</div>
 {% endblock %}
 {% block content %}
 	<div data-role="content">
 		<div class="entry">
 			<div class="entry-title"><h2>{{ entry.title }}</h2></div>
-			<p class="entry-meta"><strong>Por</strong> {{ entry.author }} <strong>em</strong> {{ date|date:"d/m/Y" }}</p>
+			<p class="entry-meta"><strong>Por</strong> {{ entry.author }} <strong>em</strong> <abbr title="{{ date }}">{{ date|date:"d/m/Y" }}</abbr></p>
 			<div class="entry-content">{{ entry.description }}</div>
 		</div>
-		<p><a href="mailto:?subject={{ entry.title }}&body={{ entry.description|striptags }}" data-role="button" data-theme="c">Enviar notícia por email</a></p>
+		
+		<div class="share-this">
+		
+			<h3>Compartilhe:</h3>
+		
+			<div class="ui-grid-a">
+				<div class="ui-block-a"><a href="http://facebook.com/sharer.php?u=http://m-ufes.appspot.com/noticia/?id={{ id }}&t={{ entry.title }}" target="blank" data-role="button" data-theme="b">Facebook</a></div>
+				<div class="ui-block-b"><a href="http://twitter.com/home?status={{ entry.title }}: http://m-ufes.appspot.com/noticia/?id={{ id }}" target="_blank" data-role="button" data-theme="a">Twitter</a></div>
+			</div>
+		
+			<p><a href="mailto:?subject={{ entry.title }}&body={{ entry.description|striptags }}" data-role="button" data-theme="c">Enviar notícia por email</a></p>
+
+		</div>
 	</div>
 {% endblock %}

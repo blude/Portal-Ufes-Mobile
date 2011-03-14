@@ -58,7 +58,7 @@ class About(RequestHandler):
 
     def get(self):
     
-        version = "2.1 beta"
+        version = "2.1.1"
     
         template_values = {
             'version': version,

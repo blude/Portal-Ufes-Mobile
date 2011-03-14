@@ -14,11 +14,13 @@
 		<ul data-role="listview" data-theme="c" data-dividertheme="d">
 			<li data-role="list-divider">{{ entries|length }} notícia{{ entries|length|pluralize }}</li>
 		{% for entry in entries %}
-			<li><a href="/noticia/?id={{ forloop.counter }}">{{ entry.title }}</a>
+			<li><a href="/noticia/?id={{ forloop.counter }}">{{ entry.title }}</a></li>
 		{% endfor %}
-			<li>&nbsp;</li>
-			<li data-theme="c"><a href="http://www.twitter.com/ufesonline/" target="_blank">Veja mais notícias no Twitter</a></li>
 		</ul>
+	
+		<hr>
+	
+		<p><a href="http://www.twitter.com/ufesonline/" data-role="button" data-theme="c" target="_blank">Veja mais notícias no Twitter</a></p>
 	
 	</div>
 {% endblock %}
