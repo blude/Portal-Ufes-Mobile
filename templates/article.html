@@ -3,17 +3,26 @@
 {% block title %}{{ entry.title }} - {% endblock %}
 {% block page-theme %}d{% endblock %}
 {% block header %}
-	<div data-role="header" data-theme="b">
+	<header data-role="header" data-theme="b">
 		<a href="/noticias/" data-icon="arrow-l" data-rel="back">Voltar</a>
 		<h1>Últimas notícias</h1>
-	</div>
+	</header>
 {% endblock %}
 {% block content %}
-	<div data-role="content">
+	<section data-role="content">
+	
 		<div class="entry">
-			<div class="entry-title"><h2>{{ entry.title }}</h2></div>
-			<p class="entry-meta"><strong>Por</strong> {{ entry.author }} <strong>em</strong> <abbr title="{{ date }}">{{ date|date:"d/m/Y" }}</abbr></p>
+		
+			<div class="entry-title">
+				<h2>{{ entry.title }}</h2>
+			</div>
+			
+			<div class="entry-meta">
+				<p><strong>Por</strong> {{ entry.author }} <strong>em</strong> <abbr title="{{ date }}">{{ date|date:"d/m/Y" }}</abbr></p>
+			</div>
+			
 			<div class="entry-content">{{ entry.description }}</div>
+			
 		</div>
 		
 		<div class="share-this">
@@ -28,5 +37,6 @@
 			<p><a href="mailto:?subject={{ entry.title }}&body={{ entry.description|striptags }}" data-role="button" data-theme="c">Enviar notícia por email</a></p>
 
 		</div>
-	</div>
+		
+	</section>
 {% endblock %}

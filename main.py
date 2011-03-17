@@ -5,10 +5,10 @@ from wsgiref.handlers import CGIHandler
 from google.appengine.ext.webapp import template
 from google.appengine.ext.webapp import RequestHandler, WSGIApplication
 sys.path.insert(0, join_path(dirname(__file__), 'lib')) # extend sys.path
-import feedparser
+import feedparser # universal feed parser
 from datetime import datetime
 
-d = feedparser.parse('http://portal.ufes.br/rss.xml') # feed url
+d = feedparser.parse('http://portal.ufes.br/rss.xml') # our feed url
 feed = d.feed
 entries = d.entries
 
@@ -31,7 +31,7 @@ class Single(RequestHandler):
         path = join_path(dirname(__file__), 'templates/article.html')
         self.response.out.write(template.render(path, template_values))
 
-class News(RequestHandler):
+class List(RequestHandler):
 
     def get(self):
         
@@ -68,7 +68,7 @@ class About(RequestHandler):
         self.response.out.write(template.render(path, template_values))
 
 
-class Changelog(RequestHandler):
+class Changes(RequestHandler):
 
     def get(self):
     
@@ -81,8 +81,8 @@ class Changelog(RequestHandler):
 def main():
     application = WSGIApplication([('/', MainHandler),
                                     ('/sobre/', About),
-                                    ('/changelog/', Changelog),
-                                    ('/noticias/', News),
+                                    ('/changelog/', Changes),
+                                    ('/noticias/', List),
                                     ('/noticia/', Single)]
                                     ,debug=True)
     CGIHandler().run(application)
