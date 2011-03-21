@@ -58,7 +58,7 @@ class About(RequestHandler):
 
     def get(self):
     
-        version = "2.1.1"
+        version = "2.2"
     
         template_values = {
             'version': version,
@@ -77,11 +77,20 @@ class Changes(RequestHandler):
         path = join_path(dirname(__file__), 'templates/changelog.html')
         self.response.out.write(template.render(path, template_values))
 
+class Menu(RequestHandler):
+
+    def get(self):
+    
+        template_values = {}
+        
+        path = join_path(dirname(__file__), 'templates/cardapio.html')
+        self.response.out.write(template.render(path, template_values))
         
 def main():
     application = WSGIApplication([('/', MainHandler),
                                     ('/sobre/', About),
                                     ('/changelog/', Changes),
+                                    ('/cardapio/', Menu),
                                     ('/noticias/', List),
                                     ('/noticia/', Single)]
                                     ,debug=True)

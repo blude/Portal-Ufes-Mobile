@@ -1,0 +1,35 @@
+﻿{% extends 'base.html' %}
+{% block page-id %}article{% endblock %}
+{% block title %}Cardápio do RU - {% endblock %}
+{% block page-theme %}d{% endblock %}
+{% block header %}
+	<header data-role="header" data-theme="b">
+		<a href="/" data-icon="arrow-l" data-rel="back">Voltar</a>
+		<h1>Cardapio do RU</h1>
+	</header>
+{% endblock %}
+{% block content %}
+	<section data-role="content">
+	
+		<div id="cardapio">
+		</div>
+		
+		<script type="text/javascript">
+		$(function() {
+		
+			// O JSON gerado pelo Yahoo! Pipes ainda pode melhorar,
+			// contribua: http://pipes.yahoo.com/blude/rudaufes
+			
+			var url = "http://pipes.yahoo.com/pipes/pipe.run?_id=ee419f78057959f0ff9adb6c4f8bad6a&_render=json";
+			
+			$.getJSON(url, function(data) {
+				$('#cardapio').html(data.value.items[0].content);
+			});
+			
+		});
+		</script>
+		
+		<p><a href="http://twitter.com/crudaufes" data-role="button" data-theme="b" target="_blank">Veja o cardápio no Twitter</a></p>
+
+	</section>
+{% endblock %}
