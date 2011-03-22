@@ -187,3 +187,27 @@
 	line-height: 1.5em;
 	font-family: Georgia, "Times New", "Times New Roman", serif;
 }
+
+/* Cardápio do RU */
+
+#cardapio h2 {
+    text-transform: capitalize;
+}
+
+.field-item {
+    display: inline;
+}
+
+.field-item:after {
+    content: ", ";    
+}
+
+.field-item:last-child:after {
+    content: "";
+}
+
+
+#cardapio small {
+    font-size: 0.9em;
+    color: #999;
+}

@@ -89,10 +89,10 @@ class Menu(RequestHandler):
 def main():
     application = WSGIApplication([('/', MainHandler),
                                     ('/sobre/', About),
-                                    ('/changelog/', Changes),
+                                    ('/sobre/changelog/', Changes),
                                     ('/cardapio/', Menu),
                                     ('/noticias/', List),
-                                    ('/noticia/', Single)]
+                                    ('/noticias/ler/', Single)]
                                     ,debug=True)
     CGIHandler().run(application)
 

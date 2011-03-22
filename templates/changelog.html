@@ -3,7 +3,7 @@
 {% block page-theme %}c{% endblock %}
 {% block header %}
 	<header data-role="header" data-position="inline" data-theme="b">
-		<a href="/about/" data-icon="arrow-l" data-rel="back" data-direction="reverse">Voltar</a>
+		<a href="../" data-icon="arrow-l" data-rel="back" rel="external">Voltar</a>
 		<h2>Changelog</h2>
 	</header>
 {% endblock %}
@@ -14,6 +14,7 @@
 		
 			<h3>2.2</h3>
 			<ul>
+				<li>removido: transições e AJAX que carregavam lentamente no Android</li>
 				<li>novo: cardápio do RU (finalmente! =D)</li>
 			</ul>
 		

@@ -3,7 +3,7 @@
 {% block page-theme %}d{% endblock %}
 {% block header %}
 	<header data-role="header" data-theme="b" data-position="inline">
-		<a href="../" data-icon="arrow-l" data-rel="back" data-direction="back">Voltar</a>
+		<a href="../" data-icon="arrow-l" data-rel="back" rel="external">Voltar</a>
 		<h1>Sobre</h1>
 	</header>
 {% endblock %}
@@ -15,8 +15,8 @@
 		</header>
 		
 		<ul data-role="listview" data-inset="true" data-theme="c">
-			<li><a href="/changelog/"><h3>Portal Ufes Mobile</h3><p>versão {{ version }}</p></a></li>
-			<li><a href="http://www.twitter.com/blude/" target="_blank"><h3>Criado por</h3><p>Saulo Pratti (@blude)</p></a></li>
+			<li><a href="/sobre/changelog/" rel="external"><h3>Portal Ufes Mobile</h3><p>versão {{ version }}</p></a></li>
+			<li><a href="http://twitter.com/blude/" target="_blank"><h3>Criado por</h3><p>Saulo Pratti (@blude)</p></a></li>
 			<li>❤ Vitória 2011</li>
 		</ul>
 		

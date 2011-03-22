@@ -4,7 +4,7 @@
 {% block page-theme %}d{% endblock %}
 {% block header %}
 	<header data-role="header" data-theme="b">
-		<a href="/noticias/" data-icon="arrow-l" data-rel="back">Voltar</a>
+		<a href="../" data-icon="arrow-l" data-rel="back" rel="external">Voltar</a>
 		<h1>Últimas notícias</h1>
 	</header>
 {% endblock %}
@@ -30,8 +30,8 @@
 			<h3>Compartilhe:</h3>
 		
 			<div class="ui-grid-a">
-				<div class="ui-block-a"><a href="http://facebook.com/sharer.php?u=http://m-ufes.appspot.com/noticia/?id={{ id }}&t={{ entry.title }}" target="blank" data-role="button" data-theme="b">Facebook</a></div>
-				<div class="ui-block-b"><a href="http://twitter.com/home?status={{ entry.title }}: http://m-ufes.appspot.com/noticia/?id={{ id }}" target="_blank" data-role="button" data-theme="a">Twitter</a></div>
+				<div class="ui-block-a"><a href="http://facebook.com/sharer.php?u=http://ufesmobile.appspot.com/noticias/ler/?id={{ id }}&t={{ entry.title }}" target="blank" data-role="button" data-theme="b">Facebook</a></div>
+				<div class="ui-block-b"><a href="http://twitter.com/home?status={{ entry.title }}: http://ufesmobile.appspot.com/noticias/ler/?id={{ id }}" target="_blank" data-role="button" data-theme="a">Twitter</a></div>
 			</div>
 		
 			<p><a href="mailto:?subject={{ entry.title }}&body={{ entry.description|striptags }}" data-role="button" data-theme="c">Enviar notícia por email</a></p>

@@ -4,7 +4,7 @@
 {% block title %}Últimas Notícias - {% endblock %}
 {% block header %}
 	<header data-role="header" data-theme="b" data-position="inline">
-		<a href="/" data-icon="arrow-l" data-rel="back" data-direction="reverse">Voltar</a>
+		<a href="../" data-icon="arrow-l" data-rel="back" rel="external">Voltar</a>
 		<h1>Últimas notícias</h1>
 	</header>
 {% endblock %}
@@ -15,7 +15,7 @@
 			<ul data-role="listview" data-theme="c" data-dividertheme="d">
 				<li data-role="list-divider">{{ entries|length }} notícia{{ entries|length|pluralize }}</li>
 			{% for entry in entries %}
-				<li><a href="/noticia/?id={{ forloop.counter }}">{{ entry.title }}</a></li>
+				<li><a href="/noticias/ler/?id={{ forloop.counter }}" rel="external">{{ entry.title }}</a></li>
 			{% endfor %}
 			</ul>
 		</div>
